@@ -1,0 +1,23 @@
+{
+    "image": "ipfs://bafybeiexp4pmoul4kxu5undrffbzlupdfk4ozfnjeggenlohf75sptb3r4/30.png",
+    "tokenId": 30,
+    "name": "MoleDao #30",
+    "attributes": [
+        {
+            "trait_type": "background",
+            "value": "blue"
+        },
+        {
+            "trait_type": "body",
+            "value": "light_brown"
+        },
+        {
+            "trait_type": "eyes",
+            "value": "line"
+        },
+        {
+            "trait_type": "mouth",
+            "value": "red_tongue"
+        }
+    ]
+}

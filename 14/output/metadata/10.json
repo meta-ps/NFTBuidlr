@@ -1,0 +1,23 @@
+{
+    "image": "ipfs://bafybeiexp4pmoul4kxu5undrffbzlupdfk4ozfnjeggenlohf75sptb3r4/bafybeiexp4pmoul4kxu5undrffbzlupdfk4ozfnjeggenlohf75sptb3r4/10.png",
+    "tokenId": 10,
+    "name": "MoleDao #10",
+    "attributes": [
+        {
+            "trait_type": "background",
+            "value": "blue"
+        },
+        {
+            "trait_type": "body",
+            "value": "sky_blue"
+        },
+        {
+            "trait_type": "eyes",
+            "value": "circle"
+        },
+        {
+            "trait_type": "mouth",
+            "value": "red_tongue"
+        }
+    ]
+}

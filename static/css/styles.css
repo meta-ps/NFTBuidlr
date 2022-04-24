@@ -1,0 +1,10 @@
+.board {
+    width: '300px';
+    listStyleType: 'none';
+    display: 'flex';
+    flexDirection: 'row';
+    justifyContent: 'space-between';
+    flexWrap: 'wrap';
+    padding: 0;
+  }
+  

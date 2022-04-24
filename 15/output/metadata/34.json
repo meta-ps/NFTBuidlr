@@ -1,0 +1,23 @@
+{
+    "image": "ipfs://bafybeiexp4pmoul4kxu5undrffbzlupdfk4ozfnjeggenlohf75sptb3r4/34.png",
+    "tokenId": 34,
+    "name": "MoleDao #34",
+    "attributes": [
+        {
+            "trait_type": "background",
+            "value": "voilet"
+        },
+        {
+            "trait_type": "body",
+            "value": "yellow"
+        },
+        {
+            "trait_type": "eyes",
+            "value": "circle"
+        },
+        {
+            "trait_type": "mouth",
+            "value": "pink_tongue"
+        }
+    ]
+}

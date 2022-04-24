@@ -1,0 +1,23 @@
+{
+    "image": "ipfs://65.png",
+    "tokenId": 65,
+    "name": "Musing Moles #65",
+    "attributes": [
+        {
+            "trait_type": "background",
+            "value": "green"
+        },
+        {
+            "trait_type": "Body",
+            "value": "orange"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "line"
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "pink_tongue"
+        }
+    ]
+}
