@@ -1,0 +1,247 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFTBuidlr</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <style>
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-md navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i><img
+                        src="https://spicyip.com/wp-content/uploads/2021/04/NFT_Icon-230x230.png"
+                        style="width: 30%; height: 30%;"></i></a>
+            <div class="navbar-collapse justify-content-left" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item li-color">
+                        <a class="nav-link" href="#">Dashboard </i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        </div>
+    </nav>
+    <hr>
+
+    <div class="text-center signup container shadow mb-5 py-5">
+        <center>
+            <h5 style="width: 50%;  border: 2px solid #5807a3;" class="text-center alert color font2"><b>Project
+                    Details</b></h5>
+        </center>
+        <br>
+
+        {% for pro in proj %}
+        <form method="post" action="{% url 'edit_proj' pro.id %}">
+            {% csrf_token %}
+            <br> <br>
+            <span class="font" style="width: 30%;font-size:18px;">Name:
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text " style="font-size:15px;"
+                    class="font2" name="projname" value="{{pro.proj_name}}" required></input></span>&nbsp;&nbsp;
+            <br> <br>
+            <span class="font" style="width: 30%;font-size:18px;">No. of NFTs: <input type="text " class="font2"
+                    name="total" style="font-size:15px;" value="{{pro.total}}"
+                    required></input></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <br> <br>
+            <span class="font" style="width: 30%;font-size:18px; ">Description: <input type="text " class="font2"
+                    name="desc" style="font-size: 15px;padding: 12px;resize: vertical;" value="{{pro.proj_desc}}"
+                    required></input></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <br> <br> <br>
+            <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button
+                    type="submit" style="background-color: #5807a3; color: white; width:95px"
+                    class="font btn btn-lg">Update</button></center>
+        </form>
+        {% empty %}
+        <form method="post" action="{% url 'add_proj' %}">
+            {% csrf_token %}
+            <br> <br>
+            <span class="font" style="width: 30%;font-size:18px;">Name:
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text " class="font2" name="projname"
+                    style="font-size:15px;" required></input></span>&nbsp;&nbsp;
+            <br> <br>
+            <span class="font" style="width: 30%;font-size:18px;">No. of NFTs: <input type="text " class="font2"
+                    name="total" style="font-size:15px;" required></input></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <br> <br>
+            <span class="font" style="width: 30%;font-size:18px;">Description: <input type="text " class="font2"
+                    name="desc" style="font-size: 15px;padding: 12px;resize: vertical;"
+                    required></input></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <br> <br> <br>
+            <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button
+                    type="submit" style="background-color: #5807a3; color: white; width:95px"
+                    class="font btn btn-lg">Save</button></center>
+        </form>
+        {% endfor %}
+
+    </div>
+    <br>
+
+
+    <div class="container ">
+        <h5 class="font2"><b>Layer</b></h5>
+        <br>
+        <form method="post" action="{% url 'layoutP' %}">
+            {% csrf_token %}
+            <input type="text" name="layoutVariable" required>
+            <input type="submit" style="border: 1px solid #5807a3;" value="+">
+        </form>
+        <br>
+
+    </div>
+    <br>
+
+    <div class="container">
+        <center>
+            <h5 style="width: 50%;  border: 2px solid #5807a3;" class="text-center alert color font2"><b>Layer
+                    Details</b></h5>
+        </center>
+        <hr>
+
+        <br>
+        <div class="laycontainer mt-5">
+            {% for i in layoutDataV%}
+            <div>
+                <br>
+                <br>
+                <form method="post" enctype="multipart/form-data" action="{% url 'uploadImage' i.id %}">
+                    {% csrf_token %}
+                    <p class="font2"> {{i.layer_name|slice:"2:"}} </p>
+                    <input style="width: 75%;" class="form-control form-control font" required name="allimages"
+                        type="file" multiple>
+                    <br>
+                    <button type="submit" class="font btn text-white btn-success">Upload</button>
+                    <br>
+                </form>
+            </div>
+
+            {% endfor %}
+        </div>
+        <br>
+        <hr>
+    </div>
+
+    <br>
+
+    <br>
+    <br>
+
+
+    <div class="signup container shadow mb-5 py-5">
+        <center>
+            <h5 style="width: 50%;  border: 2px solid #5807a3;" class="text-center alert color font2"><b>Image
+                    Details</b></h5>
+        </center>
+        <div class="imgcontainer mt-5">
+            {% for i in imagesObjects %}
+            <div class="row">
+                <div>
+                    <div class="col-lg-16 tab">
+                        <div class="card">
+
+                            <div class="card-header" style="font-size: 1.2rem; font-family: Montserrat;
+                      font-weight:525; height:50%">
+
+                                <center>
+                                    <p> {{i.layer_name|slice:"2:"}} </p>
+                                    <p> {{i.image.name|slice:"12:"|cut:'.png'}} </p>
+                                </center>
+                            </div>
+
+                            <center>
+                                <div class="card-body">
+                                    <img class="item" src="/images/{{i.image}}" alt="...">
+                                    <br>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <form method="post" action="{% url 'setrarity' i.id %}">
+                        {% csrf_token %}
+                        <span class="font item" style="width: 100px;">Set rarity: &nbsp;<input type="text "
+                                style="width: 100px;" name="rarity" value="{{i.rarity}}"></input></span>&nbsp;
+                        <button class="btn-sm" style="width:90px;" type="submit">Update</button>
+                    </form>
+                    <br> <br> <br>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+        <br>
+    </div>
+    </div>
+
+
+
+    <div class="text-center container mb-5 py-5">
+        <div class="row">
+            <form method="post" action="{% url 'GenerateImg' %}">
+                {% csrf_token %}
+                <button style="width: 30%;
+            height: 80%;" class="font btn-lg btn-warning" style="width: 75%;" type="submit">Generate</button>
+            </form>
+        </div>&nbsp;&nbsp;
+
+        <div class="row">
+            <form method="post" action="{% url 'download' %}">
+                {% csrf_token %}
+                <button style="width: 30%;
+            height: 80%;" class="font text-white btn-lg btn-success" style="width: 75%;"
+                    type="submit">Download</button>
+            </form>
+        </div>&nbsp;&nbsp;
+
+
+        <form method="post" action="{% url 'uploadnft' %}">
+            {% csrf_token %}
+            <button style="width: 30%;
+            height: 80%;" class="font btn-lg btn-info" style="width: 75%;" type="submit"
+                onClick="upload_ipfs();">Upload
+                to
+                IPFS</button>
+        </form>
+        <div id="loadGIF" hidden>
+            <p>Uploading to IPFS please wait</p>
+            <img src="{% static 'images/loadinggif.gif' %}" />
+
+
+        </div>
+    </div>&nbsp;&nbsp;
+    </div>
+    <script>
+        function upload_ipfs() {
+            document.getElementById('loadGIF').removeAttribute('hidden');
+        }
+    </script>
+
+</html>

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+ul li {
+        list-style: none;
+}
+
+.font{
+        font-family: 'Baloo Bhai 2', cursive;
+}
+.color{
+        color:#5807a3;
+}
+.font2{
+     font-family: 'Open Sans';font-size: 22px;
+}
+.bg-color{
+        background-color: #5807a3;
+}
+header{
+        background:#5807a3;
+        color:white;
+        font-family: 'Baloo Bhai 2', cursive;
+}
+header nav a{
+        font-family: 'Baloo Bhai 2', cursive;
+        color:white;
+}
+
+
+a {
+   text-decoration:none;
+}
+
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body, div, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+}
+
+.imgcontainer {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 30px;
+	justify-content: space-evenly;
+}
+.laycontainer {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 15px;
+	justify-content: space-evenly;
+}
+.item {
+	margin: 10px;
+}
